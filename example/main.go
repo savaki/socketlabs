@@ -1,10 +1,13 @@
-# socketlabs
+package main
 
-socketlabs golang api
+import (
+	"os"
 
-### Example
+	"github.com/savaki/socketlabs"
+	"golang.org/x/net/context"
+)
 
-``` golang
+func main() {
 	apiKey := os.Getenv("API_KEY")
 	serverId := os.Getenv("SERVER_ID")
 	client := socketlabs.New(apiKey, serverId)
@@ -41,4 +44,4 @@ socketlabs golang api
 			},
 		},
 	})
-```
+}
