@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"net/http"
-	"os"
 
 	"golang.org/x/net/context"
 	"golang.org/x/net/context/ctxhttp"
@@ -97,7 +96,6 @@ func (c *Client) Inject(ctx context.Context, messages []Message) (Response, erro
 		ServerId: c.serverId,
 		Messages: messages,
 	}
-	json.NewEncoder(os.Stdout).Encode(envelope)
 
 	data, err := json.Marshal(envelope)
 	if err != nil {
